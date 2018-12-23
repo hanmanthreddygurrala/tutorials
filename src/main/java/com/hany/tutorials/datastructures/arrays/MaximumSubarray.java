@@ -23,7 +23,7 @@ public class MaximumSubarray {
 	 * */
 	
 	//Kaden's Alogorithm
-	public static int maxSubArray(int[] nums) {
+	public static int maxSubArray(int[] nums) { 
 		
 		if(nums == null || nums.length == 0) {
 			return 0;
