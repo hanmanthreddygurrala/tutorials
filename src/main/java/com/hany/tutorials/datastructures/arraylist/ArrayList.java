@@ -5,12 +5,18 @@ public class ArrayList {
 	private static final int DEFAULTSIZE = 10;
 	private int[] array = null;
 
+	private int head = 0;
+
 	public ArrayList() {
 		array = new int[DEFAULTSIZE];
 	}
 
 	public ArrayList(int size) {
-		array = new int[size];
+		if (size > 0) {
+			array = new int[size];
+		} else {
+			throw new RuntimeException("Invalid size");
+		}
 	}
 
 	public int getElement(int index) {
@@ -20,4 +26,9 @@ public class ArrayList {
 			throw new RuntimeException("Invalid Index");
 		}
 	}
+
+	public void addElement(int num) {
+		array[head++] = num;
+	}
+
 }
