@@ -2,4 +2,4 @@ this is a sample file
 this is another line
 This is another sample line by Divya
 This is a line added to staging
-
+This is 2nd line by Divya
