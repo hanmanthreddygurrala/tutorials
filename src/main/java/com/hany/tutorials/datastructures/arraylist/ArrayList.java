@@ -12,4 +12,8 @@ public class ArrayList {
     public ArrayList(int size) {
     	array = new int[size];
     }
+    
+    public int getElement(int index) {
+    	return array[index];
+    }
 }
