@@ -15,6 +15,9 @@ public class ArrayList {
     }
 
     public void addElement(int num){
+        if(head > array.length){
+            throw new RuntimeException("Array is full");
+        }
         array[head++]=num;
     }
 }
