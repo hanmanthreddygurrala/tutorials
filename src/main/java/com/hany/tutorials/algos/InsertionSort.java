@@ -1,10 +1,17 @@
 package com.hany.tutorials.algos;
 
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class InsertionSort implements SortAlgorithm  {
 
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	public int[] sort(int[] array) {
 
+		logger.info("insertion sort begins");
 		for (int i = 0; i < array.length-1; i++) {
 
 			int temp;
@@ -29,6 +36,8 @@ public class InsertionSort implements SortAlgorithm  {
 			}
 
 		}
+		
+		logger.info("insertion sort ends");
 
 		return array;
 	}

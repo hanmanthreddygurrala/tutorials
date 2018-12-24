@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Appenders>
+		<Console name="AppenderTestConsole" Target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{hh:mm:ss.sss} [%t] %-5level %logger{10}-%msg%n">
+			</PatternLayout> 
+		</Console>
+		
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%-5level %d{hh:mm:ss.sss} [%t] %logger{36} - %msg%n"></PatternLayout>
+		</Console>
+		<File name="MyFile" fileName="all.log" immediateFlush="false"
+			append="false">
+			<PatternLayout
+				pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		
+		<RollingFile name="AppenderTestRollingFile" fileName="Logs/rflog.log" 
+					 filePattern="Logs/$${date:yyyy-MM}/rflog-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout pattern="%d %p %c [%t] %m%n"></PatternLayout>
+			<Policies>
+				<!--  <TimeBasedTriggeringPolicy /> -->
+				<SizeBasedTriggeringPolicy size="5 KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />					 
+		</RollingFile>
+		
+		
+	</Appenders>
+	<Loggers>
+		<Logger name="com.hany.tutorials" level="trace" additivity="false">
+			<AppenderRef ref="AppenderTestRollingFile" />
+		</Logger>
+		
+		<Root level="warn">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MyFile" />
+		</Root>
+	</Loggers>
+</Configuration>
