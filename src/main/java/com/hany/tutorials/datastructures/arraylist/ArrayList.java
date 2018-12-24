@@ -4,6 +4,7 @@ public class ArrayList {
 
 	private static final int DEFAULTSIZE = 10;	
 	private int[] array = null;
+	private int head =0;
 	
     public ArrayList(){
     	array = new int[DEFAULTSIZE];
@@ -11,5 +12,9 @@ public class ArrayList {
     
     public ArrayList(int size) {
     	array = new int[size];
+    }
+
+    public void addElement(int num){
+        array[head++]=num;
     }
 }
