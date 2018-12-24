@@ -17,4 +17,8 @@ public class ArrayList {
     public void addElement(int num){
         array[head++]=num;
     }
+
+    public void printElement(int index){
+        System.out.println(array[index]);
+    }
 }
