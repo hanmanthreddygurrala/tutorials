@@ -19,6 +19,10 @@ public class ArrayList {
     }
 
     public void printElement(int index){
+
+        if(index<0 && index >=array.length){
+            throw new RuntimeException("Index out of bound");
+        }
         System.out.println(array[index]);
     }
 }
